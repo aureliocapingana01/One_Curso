@@ -1,0 +1,14 @@
+:root {
+    --cor1: '#a3b18a';
+    --cor2: '#588157';
+    --cor3: '#3a5a40';
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.container {
+    /* background-color: var(--cor2); */
+}
