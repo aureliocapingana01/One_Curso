@@ -1,26 +1,43 @@
 import { conectaApi } from "./conectaApi.js";
 
+// data atribut
 const lista = document.querySelector("[data-list]");
 
-const constroiCard = () => {
+export default function constroiCard(titulo, descricao, url, imagem){
   const video = document.createElement("li");
-  video.classList = "videos__item";
+  video.className = "videos__item";
   video.innerHTML = `
-      <iframe width="100%" height="72%" src="https://www.youtube.com/embed/pA-EgOaF23I"
-      title="YouTube video player" frameborder="0"
+      <iframe width="100%" height="72%" src="${url}"
+      title="${titulo}" frameborder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowfullscreen></iframe>
     <div class="descricao-video">
-      <img src="./img/logo.png" alt="logo canal alura">
-      <h3>Qual é o melhor hardware para programação com Mario Souto</h3>
-      <p>236 mil visualizações</p>
+      <img src="${imagem}" alt="logo canal alura">
+      <h3>${titulo}</h3>
+      <p>${descricao}</p>
     </div>
   `;
   return video;
 };
 
+// Funcao para consumir o que veem da importacao / conectaAPI
+const listaVideos = async () => {
+  try {
+    const listApi = await conectaApi.listaVideos();
+    listApi.forEach((element) =>
+      lista.appendChild(
+        constroiCard(
+          element.titulo,
+          element.descricao,
+          element.url,
+          element.imagem
+        )
+      )
+    );
+    
+  } catch {
+    lista.innerHTML = `<h2 class="mensagem__titulo"> Não foi possivel carregar os videos</h2>`
+  }
+};
 
-// Funcao para consumir o que veem da importacao 
-const listaVideo = async () => {
-  const lista = await conectaApi.listaVideos()
-}
+listaVideos();
