@@ -1,0 +1,17 @@
+.time {
+  text-align: center;
+  padding: 30px;
+  /* background-color: #b9F7E9; */
+}
+.time h3 {
+  font-size: 32px;
+  border-bottom: 2px solid ;
+  display: inline-block;
+  padding-bottom: 8px;
+}
+.time .funcionariocss {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
