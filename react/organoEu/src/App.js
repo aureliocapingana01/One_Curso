@@ -2,6 +2,7 @@ import { useState } from "react";
 import Banner from "./componentes/Banner";
 import Form from "./componentes/Form";
 import Time from "./componentes/Time";
+import Rodape from "./componentes/Rodape";
 
 function App() {
   const times = [
@@ -45,7 +46,7 @@ function App() {
   const [funcionarios, setFuncionarios] = useState([]);
 
   const addFuncionario = (funcionario) => {
-    debugger
+    debugger;
     setFuncionarios([...funcionarios, funcionario]);
   };
 
@@ -53,18 +54,21 @@ function App() {
     <div className="App">
       <Banner />
       <Form
-      times={times.map(time => time.nome)}
+        times={times.map((time) => time.nome)}
         funcionarioCadastrado={(funcionario) => addFuncionario(funcionario)}
       />
       {times.map((time) => (
         <Time
-          key={time.nomeTime}
-          nomeTime={time.nome}
-          primaria={time.corPrimaria}
-          secundaria={time.corSecundaria}
-          funcionarios={funcionarios.filter(funcionario => funcionario.time === time.nome)}
+        key={time.nomeTime}
+        nomeTime={time.nome}
+        primaria={time.corPrimaria}
+        secundaria={time.corSecundaria}
+        funcionarios={funcionarios.filter(
+          (funcionario) => funcionario.time === time.nome
+        )}
         />
       ))}
+      <Rodape />
     </div>
   );
 }
