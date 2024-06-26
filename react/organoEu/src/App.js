@@ -43,10 +43,19 @@ function App() {
     },
   ];
 
-  const [funcionarios, setFuncionarios] = useState([]);
+  const inicial = [
+    {
+      nome: 'Aurélio Capingana',
+      cargo: 'Desenvolvedora de software e instrutora',
+      imagem: 'https://www.alura.com.br/assets/img/lideres/juliana-amoasei.1647533644.jpeg',
+      time: times[0].nome
+    },
+  ]
+
+  const [funcionarios, setFuncionarios] = useState(inicial);
 
   const addFuncionario = (funcionario) => {
-    debugger;
+    // debugger;
     setFuncionarios([...funcionarios, funcionario]);
   };
 
