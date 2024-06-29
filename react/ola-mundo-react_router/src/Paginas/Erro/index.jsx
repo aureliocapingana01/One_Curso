@@ -1,7 +1,12 @@
+import BotaoPrincipal from "Componentes/BotaoPrincipal";
 import styles from "./Erro.module.css";
 import erro404 from "assets/erro_404.png";
+import { useNavigate } from "react-router-dom";
 
 const Erro = () => {
+
+  const navegar = useNavigate()
+
   return (
     <>
       <div className={styles.conteudoContainer}>
@@ -15,7 +20,15 @@ const Erro = () => {
           <br />
         </p>
         <strong>OBRIGADO...</strong>
-        <div className={styles.botaoContainer}>Voltar</div>
+
+        <div 
+        className={styles.botaoContainer}
+        onClick={() => navegar('/')}
+        >
+          <BotaoPrincipal tamanho="lg">
+            Voltar
+          </BotaoPrincipal>
+        </div>
 
         <img
           className={styles.imagemCachorro}
@@ -23,9 +36,7 @@ const Erro = () => {
           alt="Cachorro de oculos e vestido como humano"
         />
       </div>
-      <div className={styles.espacoEmBranco}>
-
-      </div>
+      <div className={styles.espacoEmBranco}></div>
     </>
   );
 };

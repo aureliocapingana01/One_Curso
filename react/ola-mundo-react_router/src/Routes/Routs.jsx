@@ -1,4 +1,5 @@
 import PaginaPadrao from "Componentes/PaginaPadrao";
+import ScrollToTop from "Componentes/ScroolToTop";
 import Erro from "Paginas/Erro";
 import Post from "Paginas/Post";
 
@@ -11,28 +12,29 @@ const { Route, Routes, BrowserRouter } = require("react-router-dom");
 export const Routs = () => {
   return (
     <BrowserRouter>
+    <ScrollToTop />
       <Menu />
-
-      {/*
-     Na rota "/" a estrutura a ser renderizada é:
-     <PaginaPadrao>
-      <Inicio />
-     </PaginaPadrao>
-
-     Na rota "/SobreMim" a estrutura a ser renderizada é:
-     <PaginaPadrao>
-      <SobreMim/>
-     </PaginaPadrao>
-    */}
       <Routes>
         <Route path="/" element={<PaginaPadrao />}>
           <Route index element={<Inicio />} />
           <Route path="/sobreMim" element={<SobreMim />} />
-          <Route path="posts/:id" element={<Post />} />
         </Route>
+        <Route path="posts/:id" element={<Post />} />
         <Route path="*" element={<Erro />} />
       </Routes>
       <Rodape />
     </BrowserRouter>
   );
 };
+
+/*
+  Na rota "/" a estrutura a ser renderizada é:
+  <PaginaPadrao>
+  <Inicio />
+  </PaginaPadrao>
+  
+  Na rota "/SobreMim" a estrutura a ser renderizada é:
+  <PaginaPadrao>
+  <SobreMim/>
+  </PaginaPadrao>
+  */
