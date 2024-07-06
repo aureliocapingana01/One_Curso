@@ -8,7 +8,7 @@ const ItemNavegacao = ({
 }) => {
   return (
     <EstiloLi $ativo={ativo}>
-      <img src={ativo ? iconeAtivo : iconeInativo} alt="imagem ativo" />
+      <img src={ativo ? iconeAtivo : iconeInativo} alt="imagem ativo ou inativo" />
       {children}
     </EstiloLi>
   );

@@ -10,3 +10,21 @@ export const FundoGradiente = styled.div`
   width: 100%;
   min-height: 100vh;
 `;
+
+export const MainContainer = styled.main`
+  display: flex;
+  gap: 24px;
+`;
+
+export const AppContainer = styled.div`
+  width: 1240px;
+  max-width: 100%;
+  margin: 0 auto;
+`;
+
+export const ConteudoGaleria = styled.section `
+display: flex;
+flex-direction: column;
+flex-grow: 1;
+`
+
