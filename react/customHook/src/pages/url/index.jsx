@@ -1,0 +1,1 @@
+export const url = "https://hp-api.herokuapp.com/api/characters"
