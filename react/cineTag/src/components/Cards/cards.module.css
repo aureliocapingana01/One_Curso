@@ -1,0 +1,25 @@
+.container {
+  padding: 0 0 1em 0;
+  margin-top: .5em;
+  width: 230px;
+  background-color: var(--cinza);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  
+}
+ .capa {
+  width: 100%;
+}
+.container h2 {
+  font-size: 14px;
+}
+.container h2,
+.favoritar {
+  padding: 0 1em;
+}
+.favoritar {
+  width: 50px;
+  height: 25px;
+} 
