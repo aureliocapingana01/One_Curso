@@ -1,1 +1,1 @@
-export const url = "https://hp-api.herokuapp.com/api/characters"
+export const urlWizards = "https://hp-api.herokuapp.com/api/characters"

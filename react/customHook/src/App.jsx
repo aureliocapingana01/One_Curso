@@ -1,30 +1,34 @@
-import { useEffect, useState } from "react"
-import { url } from "./pages/url"
-import axios from 'axios'
+import { UserRequestData } from "./pages/Hooks/UserRequestData";
+import { urlWizards } from "./pages/url";
 
 const App = () => {
-  const [wizerds, setWizerds] = useState([])
-useEffect(() => {
-  getWizweds()
-}, [])
-  const getWizweds = () => {
-  axios.get(url) 
-  .then((res) => {
-    console.log(res.data)
-    setWizerds(res.data)
+  const [data, loading, erro] = UserRequestData(urlWizards);
 
-  }) .then((erro) => {
-    console.log(erro)
-    
-  })
-  
-  }
+  const wizardList =
+    data &&
+    data.map((wizard, id) => {
+      return <p key={id}>{wizard.name}</p>;
+    });
 
   return (
     <>
-    ola mundo
+      <h1>Bruxos e Bruxonas</h1>
+      {loading && <p>Carregando...</p>}
+      {!loading && erro && (
+        <>
+          <h3>Herry Potter</h3>
+          <p>Erro ao Carregar...</p>
+        </>
+      )}
+      {!loading && data && data.length > 0 && wizardList}
+      {!loading && data && data.length === 0 && (
+        <>
+          <h3>Herry Potter</h3>
+          <p>Não há dados para apresentar...</p>
+        </>
+      )}
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;
