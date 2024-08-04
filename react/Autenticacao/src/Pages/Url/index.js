@@ -1,0 +1,1 @@
+export const loginURL = "https://us-central1-labenu-apis.cloudfunctions.net/labeX/peu-turma-hopper/login"
