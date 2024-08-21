@@ -1,12 +1,13 @@
+import { Router } from "./Router/router";
 
 
-function App() {
 
+const App = () => {
   return (
     <>
-Ola mundo 
+    <Router />
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;
