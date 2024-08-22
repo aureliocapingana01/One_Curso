@@ -1,11 +1,17 @@
+import { IconeLupa } from "./Components/Header/CampoDeBusca/Estilo";
 import { Router } from "./Router/router";
-
-
+import { AppContainer } from "./Slyle-Global/EstiloApp";
+import { GlobalStyle } from "./Slyle-Global/GlobalStyle";
 
 const App = () => {
+  console.log(IconeLupa)
   return (
     <>
-    <Router />
+      <GlobalStyle />
+      <AppContainer>
+        <Router />
+      </AppContainer>
+      
     </>
   );
 };
